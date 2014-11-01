@@ -51,3 +51,11 @@ qsort (x : xs) = qsort larger ++ [x] ++ qsort smaller
 -- [] ++ [1] ++ [] ++ [1] ++ [] ++ [2] ++ [] ++ [2] ++ [] ++ [3] ++ []
 
 -- Result: [1, 1, 2, 2, 3]
+
+
+
+qsort_1 [] = []
+qsort_1 xs = x : qsort larger ++ qsort smaller
+    where x = maximum xs
+        smaller = [p | p <- xs, p < x ]
+        larger = [p | p <- xs, p >= x ]
