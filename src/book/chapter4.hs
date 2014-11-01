@@ -7,8 +7,8 @@ halve xs =
 	if ( length (xs) `mod` 2 == 0 )
 		then
 			splitAt ((length xs) `div` 2) xs
-		else
-			(xs, xs)
+          else
+             (xs, xs)
 
 -- 2. Consider a function safetail :: [a] → [a] that behaves as the library function
 -- tail, except that safetail maps the empty list to itself, whereas tail
@@ -21,11 +21,12 @@ safetail_a xs =
 	if null xs
 		then
 			xs
-		else
-			tail xs
+          else
+             tail xs
 
-safetail_b xs | null xs = xs
-			  | otherwise = tail xs
+safetail_b xs
+    | null xs = xs
+    | otherwise = tail xs
 
 safetail_c [] = []
 safetail_c xs = tail xs
@@ -44,11 +45,11 @@ False ∧ b = b
 
 myAnd a =
 	\ b ->
-		if a == True && b == True
-			then
-				True
-			else
-				False
+        if a == True && b == True
+        then
+            True
+        else
+            False
 
 -- 5. Do the same for the following version, and note the difference in the number
 -- of conditional expressions required:
@@ -57,14 +58,16 @@ myAnd a =
 
 myAnd2 a =
 	\ b ->
-		if a == True
-			then b
-			else False
+        if a == True
+        then
+            b
+        else
+            False
 
 -- 6. Show how the curried function definition mult x y z = x ∗ y ∗ z can be
 -- understood in terms of lambda expressions.
 
 mult x =
 	\y ->
-		\z ->
-			x * y * z
+        \z ->
+            x * y * z
