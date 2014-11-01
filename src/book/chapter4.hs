@@ -5,9 +5,9 @@
 
 halve xs =
 	if ( length (xs) `mod` 2 == 0 )
-		then
+        then
             splitAt ((length xs) `div` 2) xs
-          else
+        else
             (xs, xs)
 
 -- 2. Consider a function safetail :: [a] → [a] that behaves as the library function
@@ -21,7 +21,7 @@ safetail_a xs =
 	if null xs
 		then
 			xs
-          else
+        else
             tail xs
 
 safetail_b xs
