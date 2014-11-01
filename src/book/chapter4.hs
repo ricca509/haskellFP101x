@@ -20,7 +20,7 @@ halve xs =
 safetail_a xs =
 	if null xs
 		then
-			xs
+            xs
         else
             tail xs
 
