@@ -25,7 +25,7 @@ safetail_a xs =
             tail xs
 
 safetail_b xs
-    | null xs = xs
+    | null xs   = xs
     | otherwise = tail xs
 
 safetail_c [] = []
@@ -35,7 +35,7 @@ safetail_c xs = tail xs
 -- defined in four different ways using pattern matching.
 -- No need for four ways
 
-True ∧ _ = True
+True ∧ _  = True
 False ∧ b = b
 
 -- 4. Redefine the following version of the conjunction operator using conditional
@@ -67,7 +67,8 @@ myAnd2 a =
 -- 6. Show how the curried function definition mult x y z = x ∗ y ∗ z can be
 -- understood in terms of lambda expressions.
 
-mult x =
-	\y ->
-        \z ->
-            x * y * z
+mult =
+    \ x ->
+        \ y ->
+            \ z ->
+                x * y * z
