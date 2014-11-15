@@ -1,18 +1,19 @@
 import Prelude hiding ((^), and, concat, replicate, (!!), elem)
 
-prod [] = 1
+prod :: [a] -> Int
+prod []     = 1
 prod (x:xs) = x * prod xs
 
 leng :: [a] -> Int
-leng [] = 0
+leng []     = 0
 leng (_:xs) = 1 + leng xs
 
 rev :: [a] -> [a]
-rev [] = []
+rev []     = []
 rev (x:xs) = rev xs ++ [x]
 
 init_ :: [a] -> [a]
-init_ [_] = []
+init_ [_]    = []
 init_ (x:xs) = x : init xs
 
 -- 1. Define the exponentiation operator ↑ for non-negative integers using the
