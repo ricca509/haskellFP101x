@@ -1,9 +1,12 @@
+module Chapter5 where
+
 import Data.Char (ord, chr)
 import Data.Ix (inRange)
 
 factors n = [x | x <- [1 .. n], n `mod` x == 0]
 isPerfect n = n == sum (init (factors n))
 
+-- Caesar code
 
 caesar :: Int -> String -> String
 caesar k = map f
